@@ -1,0 +1,50 @@
+>                                                                                                                                                 <
+>                                                                                                                                                 <
+>                                                                                                                                                 <
+>                                                                                                                                                 <
+>                                                                                                                                                 <
+>                                                                                                                                                 <
+>                                                                                                                                                 <
+>                                                                                                 2                                               <
+>                                                                                        ^^^^^^^^^^^^^^^                                          <
+>                                                                                ^^^^    <              ^                                         <
+>                                                                        ^^^^    <  >    <               ^                                        <
+>                                                                ^^^^    <  >    <  >    <                ^                                       <
+>                                                    ^^^^^^^^    <  >    <  >    <  >    <                 ^                                      <
+>                                                                <  >    <  >    vvvv    <                  ^                                     <
+>                                                                <  >    vvvv            <                   ^                                    <
+>                                                                vvvv                    <vvvvvvv             ^                                   <
+>                                            ^^^^^^^^^^^^^^^^                            <        <            ^                                  <
+>                                                                                                 <             ^                                 <
+>   s                                     3                                                       <              ^                                <
+>                                                                                                 <               ^       1       t          1    <
+^^^^^^^^^^^^^^^^        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                     <                ^                              <
+               >        <                                   >                            ^^^^^^^^^                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               >        <                                   >                            <
+               >        <                                   >                            <
+               >        <                                   >                            <
+               >        <                                   >                            <
+               >rrrrrrrr<                                    dddddddddddddddd    dddddddd
+               >rrrrrrrr<                                                   >    <
+               >rrrrrrrr<                                                   >    <
+               >rrrrrrrr<                                      dddddddddddddd    dddddddddddddd
+               >rrrrrrrr<                                     >                                d
+               >        <                                     >                                d
+               >        <                                     >                                d
+               >        <                                     >                  dddddddddddddd
+               >        <                                     >    ^^^^^^^^^^^^^^
+               >        <                                     >    <
+               >        <                                     >    <
+               >        <                                     >    <
+               >        <                                     >    <
+               >        <                                     >    <vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+               >        <                                     >                                                                                      <
+               >        <                                     >                                                                                      <
+               >        <                                     >                                                                                      <
+               >        <                                     >                                                                                      <
+               >        <                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ttttttt<
+               >        vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv>vvvvvvv
+               >                                                                                                                        wwwww>       <
+               >                                                                                                                        wwwww>       <
+               >           0                        0                         0                    0                     0              wwwww>       <
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^dddddddd

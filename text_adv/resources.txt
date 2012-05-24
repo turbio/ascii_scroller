@@ -1,0 +1,2 @@
+map: res/maps/level1;
+map: res/maps/level2;

@@ -1,0 +1,5 @@
+map_info
+w 142
+h 50
+t true
+n lvl2
