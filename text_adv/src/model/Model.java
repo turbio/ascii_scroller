@@ -17,6 +17,7 @@ public class Model {
 	private Map[] maps;
 	private JFrame frame;
 	private int width = 800, height = 400;
+	//private Sprite forground, midground, background;
 	
 	private Thread loop;
 	private LoaderMap loader;
@@ -50,8 +51,6 @@ public class Model {
 		
 		updateList.add(intro);
 		drawList.add(spr);
-		
-		start();
 		
 		loop = new Thread(new Loop(this));
 		loop.start();
