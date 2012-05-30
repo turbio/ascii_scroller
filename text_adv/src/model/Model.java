@@ -67,7 +67,7 @@ public class Model {
 		loop.start();
 	}
 	
-	char[][] cl = {{' ', ' ', '/', '\\', ' ', ' '}, {' ', '/', 'X', 'X', '\\', ' '}, {'/', 'X', 'x', 'x', 'X', '\\'}, {'|', '_', '_', '_', '_', '|'}};
+	char[][] cl = {{' ', ' ', '/', '\\', ' ', ' '}, {' ', '/', 'X', 'X', '\\', ' '}, {'/', 'X', 'x', 'x', 'X', '\\'}, {' ', ' ', '|', '|', ' ', ' '}};
 	Sprite spr = new Sprite(cl);
 	
 	public void start(){
@@ -100,7 +100,7 @@ public class Model {
 		
 		frames++;
 		fps.setString("frames: " + frames + "  fps: " + ((float)frames / (float)((System.currentTimeMillis() - startTime))));
-		if(frames >= 10000){
+		if(frames >= 10000000){
 			frames = 1;
 			startTime = System.currentTimeMillis();
 			menu.next();
