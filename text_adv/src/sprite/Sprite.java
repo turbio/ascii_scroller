@@ -3,10 +3,11 @@ package sprite;
 import model.Update;
 
 public class Sprite implements Update, Drawable{
-	private double xPos, yPos, xPosVel, yPosVel, xAcc, yAcc;
+	private double xPos, yPos, xPosVel, yPosVel, xAcc, yAcc, zPos = 1;
 	private char[][] charSet;
+	private boolean fill = true;
 	
-	public Sprite(char[][] cs){
+	public Sprite(char[]... cs){
 		charSet = cs;
 	}
 	
@@ -20,6 +21,14 @@ public class Sprite implements Update, Drawable{
 		yPosVel += yAcc * delta;
 		xPos += xPosVel * delta;
 		yPos += yPosVel * delta;
+	}
+	
+	public boolean fill(){
+		return fill;
+	}
+	
+	public void fill(boolean b){
+		fill = b;
 	}
 	
 	public double getX(){
@@ -58,5 +67,21 @@ public class Sprite implements Update, Drawable{
 	
 	public int getIndex() {
 		return 0;
+	}
+	
+	public void setZ(double d){
+		zPos = d;
+	}
+	
+	public double getZ(){
+		return zPos;
+	}
+	
+	public void setXVel(double d){
+		xPosVel = d;
+	}
+	
+	public void setYVel(double d){
+		yPosVel = d;
 	}
 }

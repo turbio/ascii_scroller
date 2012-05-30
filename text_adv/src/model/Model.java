@@ -6,29 +6,36 @@ import javax.swing.JFrame;
 
 import sprite.Drawable;
 import sprite.Sprite;
+import view.Camera;
 import view.Canvas;
 
 import loader.LoaderMap;
 import map.Map;
+import menu.Menu;
 
 public class Model {
 	//main vars
-	private final String[] mapPaths = {"res/maps/level1/", "res/maps/level2/"};
+	private final String[] mapPaths = {"res/maps/level1/", "res/maps/level2/", "res/menubg/"};
 	private Map[] maps;
 	private JFrame frame;
-	private int width = 800, height = 400;
-	//private Sprite forground, midground, background;
+	public int width = 800, height = 400;
 	
 	private Thread loop;
-	private LoaderMap loader;
+	//private LoaderMap loader;
 	private ArrayList<Drawable> drawList;
 	private ArrayList<Update> updateList;
 	private Canvas canvas;
+	private Menu menu;
+	private Camera camera;
+	
+	//fps
+	private long startTime = System.currentTimeMillis(), frames = 1;
+	private Sprite fps = new Sprite("fps: 0");
 	
 	public Model(){
 		
-		loader = new LoaderMap();
-		maps = loader.loadMaps(mapPaths);
+		//loader = new LoaderMap();
+		maps = new LoaderMap().loadMaps(mapPaths);
 		//render = new Render();
 		
 		drawList = new ArrayList<Drawable>();
@@ -40,7 +47,9 @@ public class Model {
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		canvas = new Canvas("fixedsys.ttf", drawList);
+		camera = new Camera();
+		
+		canvas = new Canvas("fixedsys.ttf", camera, drawList);
 		canvas.repaint();
 		
 		frame.add(canvas);
@@ -52,15 +61,26 @@ public class Model {
 		updateList.add(intro);
 		drawList.add(spr);
 		
+		start();
+		
 		loop = new Thread(new Loop(this));
 		loop.start();
 	}
 	
-	char[][] cl = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}};
+	char[][] cl = {{' ', ' ', '/', '\\', ' ', ' '}, {' ', '/', 'X', 'X', '\\', ' '}, {'/', 'X', 'x', 'x', 'X', '\\'}, {'|', '_', '_', '_', '_', '|'}};
 	Sprite spr = new Sprite(cl);
+	
 	public void start(){
 		drawList.clear();
 		updateList.clear();
+		
+		menu = new Menu(this, "Join", "Host", "Options");
+		
+		fps.setX(0);
+		fps.setY(0);
+		//fps.setxAcc(0.001f);
+		drawList.add(fps);
+		updateList.add(fps);
 		
 		drawList.add(spr);
 		updateList.add(spr);
@@ -77,9 +97,36 @@ public class Model {
 		}else{
 			spr.setxAcc(-0.001);
 		}
+		
+		frames++;
+		fps.setString("frames: " + frames + "  fps: " + ((float)frames / (float)((System.currentTimeMillis() - startTime))));
+		if(frames >= 10000){
+			frames = 1;
+			startTime = System.currentTimeMillis();
+			menu.next();
+		}
+		
+		menu.update(delta);
 	}
 	
 	public void render(){
 		canvas.repaint();
+	}
+	
+	public ArrayList<Drawable> getDrawList(){
+		return drawList;
+	}
+	
+	public ArrayList<Update> getUpdateList(){
+		return updateList;
+	}
+	
+	public Map getMap(String name){
+		for(int i = 0; i < maps.length; i++){
+			if(maps[i].getName().toLowerCase().contains(name.toLowerCase())){
+				return maps[i];
+			}
+		}
+		return null;
 	}
 }

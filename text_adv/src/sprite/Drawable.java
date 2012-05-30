@@ -6,7 +6,11 @@ public interface Drawable {
 	
 	public double getY();
 	
+	public double getZ();
+	
 	public char[][] getCharSet();
 	
 	public int getIndex();
+	
+	public boolean fill();
 }

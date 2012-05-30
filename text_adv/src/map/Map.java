@@ -55,4 +55,18 @@ public class Map {
 	public boolean isTriggered(){
 		return triggered;
 	}
+	
+	public char[][][] getRaw(){
+		char[][][] chardata = new char[3][mapData.length][mapData[0].length];
+		
+		for(int y = 0; y < mapData.length; y++){
+			for(int x = 0; x < mapData[y].length; x++){
+				chardata[0][y][x] = mapData[y][x].getFG();
+				chardata[1][y][x] = mapData[y][x].getMG();
+				chardata[2][y][x] = mapData[y][x].getBG();
+			}
+		}
+		
+		return chardata;
+	}
 }

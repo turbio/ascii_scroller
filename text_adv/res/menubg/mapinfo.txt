@@ -1,0 +1,6 @@
+map_info
+w 150
+h 50
+t true
+n menubg
+r die

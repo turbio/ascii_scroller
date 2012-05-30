@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import map.Map;
+import map.Tile;
 
 public class LoaderMap {
 	
@@ -43,6 +44,14 @@ public class LoaderMap {
 			}
 			
 			charset = new char[4][height][width + 1];
+			
+			for(int a = 0; a < charset.length; a++){
+				for(int b = 0; b < charset[a].length; b++){
+					for(int c = 0; c < charset[a][b].length; c++){
+						charset[a][b][c] = ' ';
+					}
+				}
+			}
 			
 			for(int f = 0; f < files.length; f++){
 				
@@ -93,8 +102,18 @@ public class LoaderMap {
 				}
 			}
 			
+			Tile[][] tiles = new Tile[charset[0].length][charset[0][0].length];
+			
+			for(int y = 0; y < charset[0].length; y++){
+				for(int x = 0; x < charset[0][y].length; x++){
+					tiles[y][x] = new Tile(charset[3][y][x], charset[2][y][x], charset[1][y][x], 0, false, false);
+				}
+			}
+			
+			maps[i] = new Map(name, tiles);
 			
 		}
+		
 		return maps;
 	}
 }
