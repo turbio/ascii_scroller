@@ -32,28 +32,38 @@ public class Canvas extends JPanel{
 	}
 	
 	public void paint(Graphics g){
-		fontMetrics = g.getFontMetrics();
+		 Graphics2D g2d = (Graphics2D) g;
 		
-		g.setFont(font);
+		fontMetrics = g2d.getFontMetrics();
 		
-		g.setColor(black);
-		g.fillRect(0, 0, super.getWidth(), super.getHeight());
+		g2d.setFont(font);
 		
-		g.setColor(white);
+		g2d.setColor(black);
+		g2d.fillRect(0, 0, super.getWidth(), super.getHeight());
 		
 		for(int i = 0; i < drawList.size(); i++){
 			if(drawList.get(i).getCharSet() != null){
 				for(int y = 0; y < drawList.get(i).getCharSet().length; y++){
 					for(int x = 0; x < drawList.get(i).getCharSet()[y].length; x++){
 						try{
-							if(drawList.get(i).getCharSet()[y][x] != ' ' 
-									&& (int)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()) > -8
-									&& (int)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()) < width
-									&& (int)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()) > 0
-									&& (int)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()) < height){
-								g.drawString(drawList.get(i).getCharSet()[y][x] + "",
-									(int)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()),
-									(int)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()));
+							if((float)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()) > -8
+									&& (float)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()) < width
+									&& (float)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()) > 0
+									&& (float)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()) < height){
+								
+								if(drawList.get(i).fill()){
+									g2d.setColor(black);
+									g2d.fillRect((int)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()),
+											(int)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()),
+											8, -16);
+								}
+								
+								if(drawList.get(i).getCharSet()[y][x] != ' ' ){
+									g2d.setColor(white);
+									g2d.drawString(drawList.get(i).getCharSet()[y][x] + "",
+										(float)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()),
+										(float)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()));
+								}
 							}
 						}catch(Exception e){}
 					}
