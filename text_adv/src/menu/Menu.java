@@ -42,6 +42,7 @@ public class Menu {
 		border = new Sprite(bset);
 		border.setX(options.get(0).getX() - 50);
 		border.setY(options.get(0).getY() - 25);
+		border.fill(true);
 		
 		pointer.setX(options.get(select).getX() - (pointer.getCharSet().length * 25));
 		pointer.setY(options.get(select).getY());
@@ -102,5 +103,8 @@ public class Menu {
 		if(bg2.getX() > bg.getCharSet().length * 24){
 			bg2.setX(-bg2.getCharSet().length * 24);
 		}
+		
+		bg.setY(Math.sin((double)System.currentTimeMillis() / 10000d) * 50d);
+		bg2.setY(bg.getY());
 	}
 }

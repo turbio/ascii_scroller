@@ -67,8 +67,8 @@ public class Model {
 		loop.start();
 	}
 	
-	char[][] cl = {{' ', ' ', '/', '\\', ' ', ' '}, {' ', '/', 'X', 'X', '\\', ' '}, {'/', 'X', 'x', 'x', 'X', '\\'}, {' ', ' ', '|', '|', ' ', ' '}};
-	Sprite spr = new Sprite(cl);
+	//char[] cl = {147, 98, 200, 193, 225, 69, 104, 72};
+	//Sprite spr = new Sprite(cl);
 	
 	public void start(){
 		drawList.clear();
@@ -81,21 +81,11 @@ public class Model {
 		//fps.setxAcc(0.001f);
 		drawList.add(fps);
 		updateList.add(fps);
-		
-		drawList.add(spr);
-		updateList.add(spr);
-		spr.setY(height / 2);
 	}
 	
 	public void update(double delta){
 		for(int i = 0; i < updateList.size(); i++){
 			updateList.get(i).update(delta);
-		}
-		
-		if(spr.getX() < (width / 2) - 45){
-			spr.setxAcc(0.001);
-		}else{
-			spr.setxAcc(-0.001);
 		}
 		
 		frames++;

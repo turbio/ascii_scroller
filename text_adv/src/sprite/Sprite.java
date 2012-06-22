@@ -5,7 +5,7 @@ import model.Update;
 public class Sprite implements Update, Drawable{
 	private double xPos, yPos, xPosVel, yPosVel, xAcc, yAcc, zPos = 1;
 	private char[][] charSet;
-	private boolean fill = true;
+	private boolean fill = false;
 	
 	public Sprite(char[]... cs){
 		charSet = cs;
