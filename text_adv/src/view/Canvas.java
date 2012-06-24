@@ -15,7 +15,9 @@ import sprite.Drawable;
 
 public class Canvas extends JPanel{
 	private Font font;
-	private Color black = new Color(0, 0, 0), white = new Color(200, 200, 200);
+	private Color black = new Color(0, 0, 0), white = new Color(200, 200, 200),
+			red = new Color(255, 0, 0), green = new Color(0, 255, 0), blue = new Color(0, 0, 255),
+			brown = new Color(1, 2, 3), orange = Color.orange;
 	private ArrayList<Drawable> drawList;
 	private Camera cam;
 	private int width = 800,  height = 400;
@@ -54,12 +56,12 @@ public class Canvas extends JPanel{
 								if(drawList.get(i).fill()){
 									g2d.setColor(black);
 									g2d.fillRect((int)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()),
-											(int)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()),
-											8, -16);
+											(int)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ() - 16),
+											8, 16);
 								}
 								
 								if(drawList.get(i).getCharSet()[y][x] != ' ' ){
-									g2d.setColor(white);
+									g2d.setColor(green);
 									g2d.drawString(drawList.get(i).getCharSet()[y][x] + "",
 										(float)((drawList.get(i).getX() + (x * 8)) / drawList.get(i).getZ()),
 										(float)((drawList.get(i).getY() + ((y * fontMetrics.getHeight()) + fontMetrics.getHeight())) / drawList.get(i).getZ()));

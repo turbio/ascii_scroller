@@ -1,0 +1,34 @@
+a = red ( 255 0 0 )
+b = l-red ( 0 0 0 )
+c = d-red ( 0 0 0 )
+t = s-red ( 0 0 0 )
+
+d = green ( 0 255 0 )
+e = l-green ( 0 0 0 )
+f = d-green ( 0 0 0 )
+u = s-green ( 0 0 0 )
+
+g = blue ( 0 0 255 )
+h = l-blue	( 0 0 0 )
+i = d-blue ( 0 0 0 )
+v = s-blue ( 20 180 255 )
+
+j = brown ( 0 0 0 )
+k = d-brown ( 0 0 0 )
+y = l-brown ( 0 0 0 )
+
+l = orange ( 0 0 0 )
+m = d-orange ( 0 0 0 )
+x = l-orange ( 0 0 0 )
+
+m = gray ( 0 0 0 )
+n = d-gray ( 0 0 0 )
+o = l-gray ( 0 0 0 )
+p = dd-gray ( 0 0 0 )
+q = ll-gray ( 0 0 0 )
+
+r = yellow ( 0 0 0 )
+s = d-yellow ( 0 0 0 )
+w = l-yellow ( 0 0 0 )
+
+z = spc ( 20 180 255 )

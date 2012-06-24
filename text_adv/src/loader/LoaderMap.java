@@ -84,7 +84,9 @@ public class LoaderMap {
 								char[] readline = line.toCharArray();
 								
 								for(int x = 0; x < readline.length; x++){
-									charset[1][currentline][x] = readline[x];
+									try{
+										charset[1][currentline][x] = readline[x];
+									}catch(Exception e){}
 								}
 								currentline++;
 							}else if(files[f].getName().contains("data")){
